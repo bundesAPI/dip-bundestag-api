@@ -8,7 +8,7 @@ servers:
   - url: "https://search.dip.bundestag.de/api/v1"
 
 paths:
-  /aktivitaet:
+  /aktivitaet/:
     get:
       summary: Liste aller Aktivitäten
       responses:
@@ -16,6 +16,8 @@ paths:
             description: OK
             content:
               application/json:
+                schema:
+                  type: object
                 example:
                   numFound: 1559455
                   documents:
@@ -87,6 +89,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 aktivitaetsart: Antrag
@@ -124,6 +128,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 256903
                 documents:
@@ -209,6 +215,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 drucksachetyp: Antrag
@@ -259,6 +267,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 256903
                 documents:
@@ -515,6 +525,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 drucksachetyp: Antrag
@@ -593,6 +605,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 5293
                 documents:
@@ -657,6 +671,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 nachname: Wolf
@@ -680,6 +696,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 5422
                 documents:
@@ -776,6 +794,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 dokumentart: Plenarprotokoll
@@ -823,6 +843,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 5422
                 documents:
@@ -4099,6 +4121,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 dokumentart: Plenarprotokoll
@@ -5928,6 +5952,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 280760
                 documents:
@@ -6041,6 +6067,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 abstract: Eckpunkte der Aufgabenplanung, Schwerpunkte der Entwicklung bis 2006, Anpassung
@@ -6093,6 +6121,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 numFound: 5293
                 documents:
@@ -6194,6 +6224,8 @@ paths:
           description: OK
           content:
             application/json:
+              schema:
+                type: object
               example:
                 id: '908'
                 vorgangsposition: Antrag
