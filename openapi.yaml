@@ -8,7 +8,7 @@ servers:
   - url: "https://search.dip.bundestag.de/api/v1"
 
 paths:
-  /aktivitaet/:
+  /aktivitaet:
     get:
       summary: Liste aller Aktivitäten
       responses:
