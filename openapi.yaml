@@ -3,14 +3,20 @@ info:
   description: "DIP Bundestag API"
   version: "1.0.0"
   title: "Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien"
+  contact: 
+    name: "bund.dev"
+    email: "kontakt@bund.dev"
+    url:  "https://bund.dev"
 
 servers:
   - url: "https://search.dip.bundestag.de/api/v1"
 
 paths:
-  /aktivitaet/:
+  /aktivitaet:
     get:
       summary: Liste aller Aktivitäten
+      description: Liste aller Aktivitäten
+      operationId: aktivitaet
       responses:
         '200':
             description: OK
@@ -75,7 +81,9 @@ paths:
 
   /aktivitaet/{id}:
     get:
-      summary: Metadaten zu Aktivitäten
+      summary: Metadaten zu Aktivität
+      description: Metadaten zu Aktivität
+      operationId: aktivitaetId
       parameters:
         - in: path
           name: id
@@ -120,9 +128,11 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /drucksache/:
+  /drucksache:
     get:
       summary: Liste aller Drucksachen
+      description: Liste aller Drucksachen
+      operationId: drucksache
       responses:
         '200':
           description: OK
@@ -201,7 +211,9 @@ paths:
 
   /drucksache/{id}:
     get:
-      summary: Metadaten zu Drucksachen
+      summary: Metadaten zu Drucksache
+      description: Metadaten zu Drucksache
+      operationId: drucksacheId
       parameters:
         - in: path
           name: id
@@ -262,6 +274,8 @@ paths:
   /drucksache-text/:
     get:
       summary: Liste aller Volltexte der Drucksachen
+      description: Liste aller Volltexte der Drucksachen
+      operationId: drucksacheText
       responses:
         '200':
           description: OK
@@ -511,7 +525,9 @@ paths:
 
   /drucksache-text/{id}:
     get:
-      summary: Soweit vorhanden werden zusätzlich die Volltexte der Drucksachen ausgegeben
+      summary: Volltexte einer Drucksache
+      description: Soweit vorhanden werden zusätzlich die Volltexte einer Drucksache ausgegeben
+      operationId: drucksacheTextId
       parameters:
         - in: path
           name: id
@@ -597,9 +613,11 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /person/:
+  /person:
     get:
       summary: Liste aller Personenstammdaten
+      description: Liste aller Personenstammdaten
+      operationId: person
       responses:
         '200':
           description: OK
@@ -658,6 +676,8 @@ paths:
   /person/{id}:
     get:
       summary: Personenstammdaten
+      description: Personenstammdaten
+      operationId: personId
       parameters:
         - in: path
           name: id
@@ -688,9 +708,11 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /plenarprotokoll/:
+  /plenarprotokoll:
     get:
       summary: Liste aller Plenarprotokolle
+      description: Liste aller Plenarprotokolle
+      operationId: plenarprotokolle
       responses:
         '200':
           description: OK
@@ -780,7 +802,9 @@ paths:
 
   /plenarprotokoll/{id}:
     get:
-      summary: Metadaten zu Plenarprotokollen
+      summary: Metadaten zu Plenarprotokoll
+      description: Metadaten zu Plenarprotokoll
+      operationId: plenarprotokollId
       parameters:
         - in: path
           name: id
@@ -838,6 +862,8 @@ paths:
   /plenarprotokoll-text/:
     get:
       summary: Liste aller Volltexte der Plenarprotokolle
+      description: Liste aller Volltexte der Plenarprotokolle
+      operationId: plenarprotokollText
       responses:
         '200':
           description: OK
@@ -5947,6 +5973,8 @@ paths:
   /vorgang/:
     get:
       summary: Liste aller Vorgänge
+      description: Liste aller Vorgänge
+      operationId: vorgang
       responses:
         '200':
           description: OK
@@ -6053,7 +6081,9 @@ paths:
 
   /vorgang/{id}:
     get:
-      summary: Metadaten zu Vorgängen
+      summary: Metadaten zu Vorgang
+      description: Metadaten zu Vorgang
+      operationId: vorgangId
       parameters:
         - in: path
           name: id
@@ -6116,6 +6146,8 @@ paths:
   /vorgangsposition/:
     get:
       summary: Liste aller Vorgangspositionen
+      description: Liste aller Vorgangspositionen
+      operationId: vorgangsposition
       responses:
         '200':
           description: OK
@@ -6210,7 +6242,9 @@ paths:
 
   /vorgangsposition/{id}:
     get:
-      summary: Metadaten zu Vorgangspositionen
+      summary: Metadaten zu Vorgangsposition
+      description: Metadaten zu Vorgangsposition
+      operationId: vorgangspositionId
       parameters:
         - in: path
           name: id
