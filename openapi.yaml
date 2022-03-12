@@ -17,6 +17,8 @@ paths:
       summary: Liste aller Aktivitäten
       description: Liste aller Aktivitäten
       operationId: aktivitaet
+      tags:
+        - aktivitaet
       responses:
         '200':
             description: OK
@@ -84,6 +86,8 @@ paths:
       summary: Metadaten zu Aktivität
       description: Metadaten zu Aktivität
       operationId: aktivitaetId
+      tags:
+        - aktivitaet
       parameters:
         - in: path
           name: id
@@ -133,6 +137,8 @@ paths:
       summary: Liste aller Drucksachen
       description: Liste aller Drucksachen
       operationId: drucksache
+      tags:
+        - drucksache      
       responses:
         '200':
           description: OK
@@ -214,6 +220,8 @@ paths:
       summary: Metadaten zu Drucksache
       description: Metadaten zu Drucksache
       operationId: drucksacheId
+      tags:
+        - drucksache
       parameters:
         - in: path
           name: id
@@ -276,6 +284,8 @@ paths:
       summary: Liste aller Volltexte der Drucksachen
       description: Liste aller Volltexte der Drucksachen
       operationId: drucksacheText
+      tags:
+        - drucksache      
       responses:
         '200':
           description: OK
@@ -528,6 +538,8 @@ paths:
       summary: Volltexte einer Drucksache
       description: Soweit vorhanden werden zusätzlich die Volltexte einer Drucksache ausgegeben
       operationId: drucksacheTextId
+      tags:
+        - drucksache      
       parameters:
         - in: path
           name: id
@@ -618,6 +630,8 @@ paths:
       summary: Liste aller Personenstammdaten
       description: Liste aller Personenstammdaten
       operationId: person
+      tags:
+        - person      
       responses:
         '200':
           description: OK
@@ -678,6 +692,8 @@ paths:
       summary: Personenstammdaten
       description: Personenstammdaten
       operationId: personId
+      tags:
+        - person            
       parameters:
         - in: path
           name: id
@@ -712,7 +728,9 @@ paths:
     get:
       summary: Liste aller Plenarprotokolle
       description: Liste aller Plenarprotokolle
-      operationId: plenarprotokolle
+      operationId: plenarprotokoll
+      tags:
+        - plenarprotokoll            
       responses:
         '200':
           description: OK
@@ -805,6 +823,8 @@ paths:
       summary: Metadaten zu Plenarprotokoll
       description: Metadaten zu Plenarprotokoll
       operationId: plenarprotokollId
+      tags:
+        - plenarprotokoll      
       parameters:
         - in: path
           name: id
@@ -864,6 +884,8 @@ paths:
       summary: Liste aller Volltexte der Plenarprotokolle
       description: Liste aller Volltexte der Plenarprotokolle
       operationId: plenarprotokollText
+      tags:
+        - plenarprotokoll      
       responses:
         '200':
           description: OK
@@ -4133,7 +4155,10 @@ paths:
 
   /plenarprotokoll-text/{id}:
     get:
-      summary: Soweit vorhanden werden zusätzlich die Volltexte der Plenarprotokolle ausgegeben
+      summary: Volltexte der Plenarprotokolle
+      description: Soweit vorhanden werden zusätzlich die Volltexte der Plenarprotokolle ausgegeben
+      tags:
+        - plenarprotokoll      
       parameters:
         - in: path
           name: id
@@ -5975,6 +6000,8 @@ paths:
       summary: Liste aller Vorgänge
       description: Liste aller Vorgänge
       operationId: vorgang
+      tags:
+        - vorgang            
       responses:
         '200':
           description: OK
@@ -6084,6 +6111,8 @@ paths:
       summary: Metadaten zu Vorgang
       description: Metadaten zu Vorgang
       operationId: vorgangId
+      tags:
+        - vorgang            
       parameters:
         - in: path
           name: id
@@ -6148,6 +6177,8 @@ paths:
       summary: Liste aller Vorgangspositionen
       description: Liste aller Vorgangspositionen
       operationId: vorgangsposition
+      tags:
+        - vorgangsposition            
       responses:
         '200':
           description: OK
@@ -6245,6 +6276,8 @@ paths:
       summary: Metadaten zu Vorgangsposition
       description: Metadaten zu Vorgangsposition
       operationId: vorgangspositionId
+      tags:
+        - vorgangsposition            
       parameters:
         - in: path
           name: id
