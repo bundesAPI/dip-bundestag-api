@@ -1,16 +1,24 @@
 openapi: "3.0.0"
 info:
-  description: "DIP Bundestag API"
+  title: "DIP Bundestag API"
   version: "1.0.0"
-  title: "Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien"
+  description: "Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien"
+  contact: 
+    name: "bund.dev"
+    email: "kontakt@bund.dev"
+    url:  "https://bund.dev"
 
 servers:
   - url: "https://search.dip.bundestag.de/api/v1"
 
 paths:
-  /aktivitaet/:
+  /aktivitaet:
     get:
       summary: Liste aller Aktivitäten
+      description: Liste aller Aktivitäten
+      operationId: aktivitaet
+      tags:
+        - aktivitaet
       responses:
         '200':
             description: OK
@@ -75,7 +83,11 @@ paths:
 
   /aktivitaet/{id}:
     get:
-      summary: Metadaten zu Aktivitäten
+      summary: Metadaten zu Aktivität
+      description: Metadaten zu Aktivität
+      operationId: aktivitaetId
+      tags:
+        - aktivitaet
       parameters:
         - in: path
           name: id
@@ -120,9 +132,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /drucksache/:
+  /drucksache:
     get:
       summary: Liste aller Drucksachen
+      description: Liste aller Drucksachen
+      operationId: drucksache
+      tags:
+        - drucksache      
       responses:
         '200':
           description: OK
@@ -201,7 +217,11 @@ paths:
 
   /drucksache/{id}:
     get:
-      summary: Metadaten zu Drucksachen
+      summary: Metadaten zu Drucksache
+      description: Metadaten zu Drucksache
+      operationId: drucksacheId
+      tags:
+        - drucksache
       parameters:
         - in: path
           name: id
@@ -259,9 +279,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /drucksache-text/:
+  /drucksache-text:
     get:
       summary: Liste aller Volltexte der Drucksachen
+      description: Liste aller Volltexte der Drucksachen
+      operationId: drucksacheText
+      tags:
+        - drucksache      
       responses:
         '200':
           description: OK
@@ -511,7 +535,11 @@ paths:
 
   /drucksache-text/{id}:
     get:
-      summary: Soweit vorhanden werden zusätzlich die Volltexte der Drucksachen ausgegeben
+      summary: Volltexte einer Drucksache
+      description: Soweit vorhanden werden zusätzlich die Volltexte einer Drucksache ausgegeben
+      operationId: drucksacheTextId
+      tags:
+        - drucksache      
       parameters:
         - in: path
           name: id
@@ -597,9 +625,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /person/:
+  /person:
     get:
       summary: Liste aller Personenstammdaten
+      description: Liste aller Personenstammdaten
+      operationId: person
+      tags:
+        - person      
       responses:
         '200':
           description: OK
@@ -658,6 +690,10 @@ paths:
   /person/{id}:
     get:
       summary: Personenstammdaten
+      description: Personenstammdaten
+      operationId: personId
+      tags:
+        - person            
       parameters:
         - in: path
           name: id
@@ -688,9 +724,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /plenarprotokoll/:
+  /plenarprotokoll:
     get:
       summary: Liste aller Plenarprotokolle
+      description: Liste aller Plenarprotokolle
+      operationId: plenarprotokoll
+      tags:
+        - plenarprotokoll            
       responses:
         '200':
           description: OK
@@ -780,7 +820,11 @@ paths:
 
   /plenarprotokoll/{id}:
     get:
-      summary: Metadaten zu Plenarprotokollen
+      summary: Metadaten zu Plenarprotokoll
+      description: Metadaten zu Plenarprotokoll
+      operationId: plenarprotokollId
+      tags:
+        - plenarprotokoll      
       parameters:
         - in: path
           name: id
@@ -835,9 +879,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /plenarprotokoll-text/:
+  /plenarprotokoll-text:
     get:
       summary: Liste aller Volltexte der Plenarprotokolle
+      description: Liste aller Volltexte der Plenarprotokolle
+      operationId: plenarprotokollText
+      tags:
+        - plenarprotokoll      
       responses:
         '200':
           description: OK
@@ -4107,7 +4155,10 @@ paths:
 
   /plenarprotokoll-text/{id}:
     get:
-      summary: Soweit vorhanden werden zusätzlich die Volltexte der Plenarprotokolle ausgegeben
+      summary: Volltexte der Plenarprotokolle
+      description: Soweit vorhanden werden zusätzlich die Volltexte der Plenarprotokolle ausgegeben
+      tags:
+        - plenarprotokoll      
       parameters:
         - in: path
           name: id
@@ -5944,9 +5995,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /vorgang/:
+  /vorgang:
     get:
       summary: Liste aller Vorgänge
+      description: Liste aller Vorgänge
+      operationId: vorgang
+      tags:
+        - vorgang            
       responses:
         '200':
           description: OK
@@ -6053,7 +6108,11 @@ paths:
 
   /vorgang/{id}:
     get:
-      summary: Metadaten zu Vorgängen
+      summary: Metadaten zu Vorgang
+      description: Metadaten zu Vorgang
+      operationId: vorgangId
+      tags:
+        - vorgang            
       parameters:
         - in: path
           name: id
@@ -6113,9 +6172,13 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /vorgangsposition/:
+  /vorgangsposition:
     get:
       summary: Liste aller Vorgangspositionen
+      description: Liste aller Vorgangspositionen
+      operationId: vorgangsposition
+      tags:
+        - vorgangsposition            
       responses:
         '200':
           description: OK
@@ -6210,7 +6273,11 @@ paths:
 
   /vorgangsposition/{id}:
     get:
-      summary: Metadaten zu Vorgangspositionen
+      summary: Metadaten zu Vorgangsposition
+      description: Metadaten zu Vorgangsposition
+      operationId: vorgangspositionId
+      tags:
+        - vorgangsposition            
       parameters:
         - in: path
           name: id
