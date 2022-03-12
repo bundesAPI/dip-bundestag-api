@@ -19,6 +19,66 @@ paths:
       operationId: aktivitaet
       tags:
         - aktivitaet
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
+        - in: query
+          name: f.drucksache
+          schema:
+            type: integer
+          description: "ID einer verknüpften Drucksache. Selektiert alle Entitäten, die mit der angegebenen Drucksache verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgangvorgangsposition."
+          example: 68852
+        - in: query
+          name: f.plenarprotokoll
+          schema:
+            type: integer
+          description: "ID eines verknüpften Plenarprotokolls. Selektiert alle Entitäten, die mit dem angegebenen Plenarprotokoll verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgang, vorgangsposition." 
+          example: 908
+        - in: query
+          name: f.zuordnung
+          schema:
+            type: string
+            enum:
+              - BT
+              - BR
+              - BV
+              - EK
+          description: "Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache."
+          example: BT
       responses:
         '200':
             description: OK
@@ -96,6 +156,16 @@ paths:
             example: 908
           required: true
           description: ID der Aktivität
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -139,6 +209,54 @@ paths:
       operationId: drucksache
       tags:
         - drucksache      
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
+        - in: query
+          name: f.zuordnung
+          schema:
+            type: string
+            enum:
+              - BT
+              - BR
+              - BV
+              - EK
+          description: "Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache."
+          example: BT
       responses:
         '200':
           description: OK
@@ -230,6 +348,16 @@ paths:
             example: 908
           required: true
           description: ID der Drucksache
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -286,6 +414,53 @@ paths:
       operationId: drucksacheText
       tags:
         - drucksache      
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+          description: Format
+          enum:
+            - json
+            - xml
+          example: "json"
+          required: false
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
       responses:
         '200':
           description: OK
@@ -548,6 +723,16 @@ paths:
             example: 908
           required: true
           description: ID der Drucksache
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -632,6 +817,43 @@ paths:
       operationId: person
       tags:
         - person      
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
       responses:
         '200':
           description: OK
@@ -702,6 +924,16 @@ paths:
             example: 908
           required: true
           description: ID der Person
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -731,6 +963,43 @@ paths:
       operationId: plenarprotokoll
       tags:
         - plenarprotokoll            
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
       responses:
         '200':
           description: OK
@@ -833,6 +1102,16 @@ paths:
             example: 908
           required: true
           description: ID des Plenarprotokolles
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -886,6 +1165,43 @@ paths:
       operationId: plenarprotokollText
       tags:
         - plenarprotokoll      
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
       responses:
         '200':
           description: OK
@@ -4167,6 +4483,16 @@ paths:
             example: 908
           required: true
           description: ID des Plenarprotokolles
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -6002,6 +6328,49 @@ paths:
       operationId: vorgang
       tags:
         - vorgang            
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
+        - in: query
+          name: f.plenarprotokoll
+          schema:
+            type: integer
+          description: "ID eines verknüpften Plenarprotokolls. Selektiert alle Entitäten, die mit dem angegebenen Plenarprotokoll verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgang, vorgangsposition." 
+          example: 908
       responses:
         '200':
           description: OK
@@ -6121,6 +6490,16 @@ paths:
             example: 908
           required: true
           description: ID des Vorgangs
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
@@ -6179,6 +6558,67 @@ paths:
       operationId: vorgangsposition
       tags:
         - vorgangsposition            
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
+        - in: query
+          name: cursor
+          schema: 
+            type: string
+          description: "Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten)."
+          example: AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5
+          required: false
+        - in: query
+          name: f.id
+          schema:
+            type: integer
+          description: "ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394)."
+          example: 84394
+          required: false
+        - in: query
+          name: f.datum.start
+          schema:
+            type: string
+          description: "Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-01-01
+        - in: query
+          name: f.datum.end
+          schema:
+            type: string
+          description: "Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen."
+          example: 2020-02-28
+        - in: query
+          name: f.drucksache
+          schema:
+            type: integer
+          description: "ID einer verknüpften Drucksache. Selektiert alle Entitäten, die mit der angegebenen Drucksache verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgangvorgangsposition."
+          example: 68852
+        - in: query
+          name: f.plenarprotokoll
+          schema:
+            type: integer
+          description: "ID eines verknüpften Plenarprotokolls. Selektiert alle Entitäten, die mit dem angegebenen Plenarprotokoll verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgang, vorgangsposition." 
+          example: 908
+        - in: query
+          name: f.vorgang
+          schema:
+            type: integer
+          description: "ID eines verknüpften Vorgangs. Selektiert alle Entitäten, die mit dem angegebenen Vorgang verknüpft sind. Nur für die Ressourcentypen: vorgangsposition."
+          example: 84394
+        - in: query
+          name: f.aktivitaet
+          schema:
+            type: integer
+          description: "ID einer verknüpften Aktivität. Selektiert alle Entitäten, die mit der angegebenen Aktivität verknüpft sind. Nur für die Ressourcentypen: vorgangsposition."
+          example: 1493545 
       responses:
         '200':
           description: OK
@@ -6286,6 +6726,16 @@ paths:
             example: 908
           required: true
           description: ID der Vorgangsposition
+        - in: query
+          name: format
+          schema:
+            type: string
+            enum:
+              - json
+              - xml
+          description: Format
+          example: "json"
+          required: false
       responses:
         '200':
           description: OK
