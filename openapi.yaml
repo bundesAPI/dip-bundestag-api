@@ -1,8 +1,8 @@
 openapi: "3.0.0"
 info:
-  description: "DIP Bundestag API"
+  title: "DIP Bundestag API"
   version: "1.0.0"
-  title: "Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien"
+  description: "Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien"
   contact: 
     name: "bund.dev"
     email: "kontakt@bund.dev"
