@@ -22,8 +22,8 @@ sys.path.insert(0, os.path.abspath("../"))
 # -- Project information -----------------------------------------------------
 
 project = "dip_bundestag-api"
-copyright = "2022, BundesAPI"
-author = "BundesAPI"
+copyright = "2022, bund.dev"
+author = "bund.dev"
 
 # The short X.Y version
 version = "0.1.0"

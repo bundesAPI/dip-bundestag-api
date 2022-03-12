@@ -1,7 +1,7 @@
 """
-    Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
+    DIP Bundestag API
 
-    DIP Bundestag API  # noqa: E501
+    Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: kontakt@bund.dev
@@ -865,11 +865,11 @@ class Endpoint(object):
         """This method is invoked when endpoints are called
         Example:
 
-        api_instance = DefaultApi()
-        api_instance.aktivitaet_get  # this is an instance of the class Endpoint
-        api_instance.aktivitaet_get()  # this invokes api_instance.aktivitaet_get.__call__()
+        api_instance = AktivitaetApi()
+        api_instance.aktivitaet  # this is an instance of the class Endpoint
+        api_instance.aktivitaet()  # this invokes api_instance.aktivitaet.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.aktivitaet_get.callable or self.callable in this class
+        api_instance.aktivitaet.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)
