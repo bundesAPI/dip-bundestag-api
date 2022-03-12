@@ -279,7 +279,7 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /drucksache-text/:
+  /drucksache-text:
     get:
       summary: Liste aller Volltexte der Drucksachen
       description: Liste aller Volltexte der Drucksachen
@@ -879,7 +879,7 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /plenarprotokoll-text/:
+  /plenarprotokoll-text:
     get:
       summary: Liste aller Volltexte der Plenarprotokolle
       description: Liste aller Volltexte der Plenarprotokolle
@@ -5995,7 +5995,7 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /vorgang/:
+  /vorgang:
     get:
       summary: Liste aller Vorgänge
       description: Liste aller Vorgänge
@@ -6172,7 +6172,7 @@ paths:
         '404':
           $ref: "#/components/responses/NotFoundError"
 
-  /vorgangsposition/:
+  /vorgangsposition:
     get:
       summary: Liste aller Vorgangspositionen
       description: Liste aller Vorgangspositionen
