@@ -1,9 +1,9 @@
 # flake8: noqa
 
 """
-    Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
+    DIP Bundestag API
 
-    DIP Bundestag API  # noqa: E501
+    Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien  # noqa: E501
 
     The version of the OpenAPI document: 1.0.0
     Contact: kontakt@bund.dev
