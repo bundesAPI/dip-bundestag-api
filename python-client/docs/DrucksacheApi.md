@@ -47,11 +47,18 @@ configuration.api_key['ApiKeyAuth'] = 'YOUR_API_KEY'
 with dip_bundestag.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = drucksache_api.DrucksacheApi(api_client)
+    format = "json" # str | Format (optional)
+    cursor = "AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5" # str | Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten). (optional)
+    f_id = 84394 # int | ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394). (optional)
+    f_datum_start = "2020-01-01" # str | Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
+    f_datum_end = "2020-02-28" # str | Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
+    f_zuordnung = "BT" # str | Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache. (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Liste aller Drucksachen
-        api_response = api_instance.drucksache()
+        api_response = api_instance.drucksache(format=format, cursor=cursor, f_id=f_id, f_datum_start=f_datum_start, f_datum_end=f_datum_end, f_zuordnung=f_zuordnung)
         pprint(api_response)
     except dip_bundestag.ApiException as e:
         print("Exception when calling DrucksacheApi->drucksache: %s\n" % e)
@@ -59,7 +66,15 @@ with dip_bundestag.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **str**| Format | [optional]
+ **cursor** | **str**| Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten). | [optional]
+ **f_id** | **int**| ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id&#x3D;84393&amp;f.id&#x3D;84394). | [optional]
+ **f_datum_start** | **str**| Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. | [optional]
+ **f_datum_end** | **str**| Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. | [optional]
+ **f_zuordnung** | **str**| Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache. | [optional]
 
 ### Return type
 
@@ -123,11 +138,21 @@ with dip_bundestag.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = drucksache_api.DrucksacheApi(api_client)
     id = 908 # int | ID der Drucksache
+    format = "json" # str | Format (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Metadaten zu Drucksache
         api_response = api_instance.drucksache_id(id)
+        pprint(api_response)
+    except dip_bundestag.ApiException as e:
+        print("Exception when calling DrucksacheApi->drucksache_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Metadaten zu Drucksache
+        api_response = api_instance.drucksache_id(id, format=format)
         pprint(api_response)
     except dip_bundestag.ApiException as e:
         print("Exception when calling DrucksacheApi->drucksache_id: %s\n" % e)
@@ -139,6 +164,7 @@ with dip_bundestag.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID der Drucksache |
+ **format** | **str**| Format | [optional]
 
 ### Return type
 
@@ -201,11 +227,17 @@ configuration.api_key['ApiKeyAuth'] = 'YOUR_API_KEY'
 with dip_bundestag.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = drucksache_api.DrucksacheApi(api_client)
+    format = "json" # str | Format (json or xml) (optional)
+    cursor = "AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5" # str | Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten). (optional)
+    f_id = 84394 # int | ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394). (optional)
+    f_datum_start = "2020-01-01" # str | Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
+    f_datum_end = "2020-02-28" # str | Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Liste aller Volltexte der Drucksachen
-        api_response = api_instance.drucksache_text()
+        api_response = api_instance.drucksache_text(format=format, cursor=cursor, f_id=f_id, f_datum_start=f_datum_start, f_datum_end=f_datum_end)
         pprint(api_response)
     except dip_bundestag.ApiException as e:
         print("Exception when calling DrucksacheApi->drucksache_text: %s\n" % e)
@@ -213,7 +245,14 @@ with dip_bundestag.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **str**| Format (json or xml) | [optional]
+ **cursor** | **str**| Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten). | [optional]
+ **f_id** | **int**| ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id&#x3D;84393&amp;f.id&#x3D;84394). | [optional]
+ **f_datum_start** | **str**| Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. | [optional]
+ **f_datum_end** | **str**| Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. | [optional]
 
 ### Return type
 
@@ -277,11 +316,21 @@ with dip_bundestag.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = drucksache_api.DrucksacheApi(api_client)
     id = 908 # int | ID der Drucksache
+    format = "json" # str | Format (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # Volltexte einer Drucksache
         api_response = api_instance.drucksache_text_id(id)
+        pprint(api_response)
+    except dip_bundestag.ApiException as e:
+        print("Exception when calling DrucksacheApi->drucksache_text_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Volltexte einer Drucksache
+        api_response = api_instance.drucksache_text_id(id, format=format)
         pprint(api_response)
     except dip_bundestag.ApiException as e:
         print("Exception when calling DrucksacheApi->drucksache_text_id: %s\n" % e)
@@ -293,6 +342,7 @@ with dip_bundestag.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID der Drucksache |
+ **format** | **str**| Format | [optional]
 
 ### Return type
 

@@ -73,10 +73,18 @@ configuration.api_key['ApiKeyAuth'] = 'YOUR_API_KEY'
 with dip_bundestag.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = aktivitaet_api.AktivitaetApi(api_client)
+    format = "json" # str | Format (optional)
+    cursor = "AoJwwOKPs1MCNFBsZW5hcnByb3Rva29sbC00NzM5" # str | Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten). (optional)
+    f_id = 84394 # int | ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394). (optional)
+    f_datum_start = "2020-01-01" # str | Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
+    f_datum_end = "2020-02-28" # str | Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen. (optional)
+    f_drucksache = 68852 # int | ID einer verknüpften Drucksache. Selektiert alle Entitäten, die mit der angegebenen Drucksache verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgangvorgangsposition. (optional)
+    f_plenarprotokoll = 908 # int | ID eines verknüpften Plenarprotokolls. Selektiert alle Entitäten, die mit dem angegebenen Plenarprotokoll verknüpft sind. Nur für die Ressourcentypen: aktivitaet, vorgang, vorgangsposition. (optional)
+    f_zuordnung = "BT" # str | Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache. (optional)
 
     try:
         # Liste aller Aktivitäten
-        api_response = api_instance.aktivitaet()
+        api_response = api_instance.aktivitaet(format=format, cursor=cursor, f_id=f_id, f_datum_start=f_datum_start, f_datum_end=f_datum_end, f_drucksache=f_drucksache, f_plenarprotokoll=f_plenarprotokoll, f_zuordnung=f_zuordnung)
         pprint(api_response)
     except dip_bundestag.ApiException as e:
         print("Exception when calling AktivitaetApi->aktivitaet: %s\n" % e)

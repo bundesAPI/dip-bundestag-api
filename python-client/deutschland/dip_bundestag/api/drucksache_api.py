@@ -60,18 +60,52 @@ class DrucksacheApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [],
+                "all": [
+                    "format",
+                    "cursor",
+                    "f_id",
+                    "f_datum_start",
+                    "f_datum_end",
+                    "f_zuordnung",
+                ],
                 "required": [],
                 "nullable": [],
-                "enum": [],
+                "enum": [
+                    "format",
+                    "f_zuordnung",
+                ],
                 "validation": [],
             },
             root_map={
                 "validations": {},
-                "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
+                "allowed_values": {
+                    ("format",): {"JSON": "json", "XML": "xml"},
+                    ("f_zuordnung",): {"BT": "BT", "BR": "BR", "BV": "BV", "EK": "EK"},
+                },
+                "openapi_types": {
+                    "format": (str,),
+                    "cursor": (str,),
+                    "f_id": (int,),
+                    "f_datum_start": (str,),
+                    "f_datum_end": (str,),
+                    "f_zuordnung": (str,),
+                },
+                "attribute_map": {
+                    "format": "format",
+                    "cursor": "cursor",
+                    "f_id": "f.id",
+                    "f_datum_start": "f.datum.start",
+                    "f_datum_end": "f.datum.end",
+                    "f_zuordnung": "f.zuordnung",
+                },
+                "location_map": {
+                    "format": "query",
+                    "cursor": "query",
+                    "f_id": "query",
+                    "f_datum_start": "query",
+                    "f_datum_end": "query",
+                    "f_zuordnung": "query",
+                },
                 "collection_format_map": {},
             },
             headers_map={
@@ -106,25 +140,33 @@ class DrucksacheApi(object):
             params_map={
                 "all": [
                     "id",
+                    "format",
                 ],
                 "required": [
                     "id",
                 ],
                 "nullable": [],
-                "enum": [],
+                "enum": [
+                    "format",
+                ],
                 "validation": [],
             },
             root_map={
                 "validations": {},
-                "allowed_values": {},
+                "allowed_values": {
+                    ("format",): {"JSON": "json", "XML": "xml"},
+                },
                 "openapi_types": {
                     "id": (int,),
+                    "format": (str,),
                 },
                 "attribute_map": {
                     "id": "id",
+                    "format": "format",
                 },
                 "location_map": {
                     "id": "path",
+                    "format": "query",
                 },
                 "collection_format_map": {},
             },
@@ -158,7 +200,13 @@ class DrucksacheApi(object):
                 "servers": None,
             },
             params_map={
-                "all": [],
+                "all": [
+                    "format",
+                    "cursor",
+                    "f_id",
+                    "f_datum_start",
+                    "f_datum_end",
+                ],
                 "required": [],
                 "nullable": [],
                 "enum": [],
@@ -167,9 +215,27 @@ class DrucksacheApi(object):
             root_map={
                 "validations": {},
                 "allowed_values": {},
-                "openapi_types": {},
-                "attribute_map": {},
-                "location_map": {},
+                "openapi_types": {
+                    "format": (str,),
+                    "cursor": (str,),
+                    "f_id": (int,),
+                    "f_datum_start": (str,),
+                    "f_datum_end": (str,),
+                },
+                "attribute_map": {
+                    "format": "format",
+                    "cursor": "cursor",
+                    "f_id": "f.id",
+                    "f_datum_start": "f.datum.start",
+                    "f_datum_end": "f.datum.end",
+                },
+                "location_map": {
+                    "format": "query",
+                    "cursor": "query",
+                    "f_id": "query",
+                    "f_datum_start": "query",
+                    "f_datum_end": "query",
+                },
                 "collection_format_map": {},
             },
             headers_map={
@@ -204,25 +270,33 @@ class DrucksacheApi(object):
             params_map={
                 "all": [
                     "id",
+                    "format",
                 ],
                 "required": [
                     "id",
                 ],
                 "nullable": [],
-                "enum": [],
+                "enum": [
+                    "format",
+                ],
                 "validation": [],
             },
             root_map={
                 "validations": {},
-                "allowed_values": {},
+                "allowed_values": {
+                    ("format",): {"JSON": "json", "XML": "xml"},
+                },
                 "openapi_types": {
                     "id": (int,),
+                    "format": (str,),
                 },
                 "attribute_map": {
                     "id": "id",
+                    "format": "format",
                 },
                 "location_map": {
                     "id": "path",
+                    "format": "query",
                 },
                 "collection_format_map": {},
             },
@@ -245,6 +319,12 @@ class DrucksacheApi(object):
 
 
         Keyword Args:
+            format (str): Format. [optional]
+            cursor (str): Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten).. [optional]
+            f_id (int): ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394).. [optional]
+            f_datum_start (str): Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen.. [optional]
+            f_datum_end (str): Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen.. [optional]
+            f_zuordnung (str): Zuordnung der Entität zum Bundestag (BT), Bundesrat (BR), Bundesversammlung (BV) oder Europakammer (EK). Nur für die Ressourcentypen: aktivitaet, drucksache.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -302,6 +382,7 @@ class DrucksacheApi(object):
             id (int): ID der Drucksache
 
         Keyword Args:
+            format (str): Format. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -358,6 +439,11 @@ class DrucksacheApi(object):
 
 
         Keyword Args:
+            format (str): Format (json or xml). [optional]
+            cursor (str): Position des Cursors zur Anfrage weiterer Entitäten (s. Folgeanfragen nach weiteren Entitäten).. [optional]
+            f_id (int): ID der Entität. Kann wiederholt werden, um mehrere Entitäten zu selektieren (z.B. f.id=84393&f.id=84394).. [optional]
+            f_datum_start (str): Frühestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen.. [optional]
+            f_datum_end (str): Spätestes Datum der Entität im Format JJJJ-MM-TT. Selektiert Entitäten in einem Datumsbereich basierend auf dem Dokumentdatum. Für Vorgänge und Personen wird der Datumsbereich aller zugehörigen Dokumente herangezogen.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -415,6 +501,7 @@ class DrucksacheApi(object):
             id (int): ID der Drucksache
 
         Keyword Args:
+            format (str): Format. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
