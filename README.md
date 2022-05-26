@@ -131,6 +131,6 @@ Metadaten zu Vorgang, mit dem Pfad-Parameter *id* (z.B. 908).
 ## Beispiel:
 
 ```bash
-dip=$(curl -m 60 -H "Authorization: ApiKey N64VhW8.yChkBUIJeosGojQ7CSR2xwLf3Qy7Apw464" \
-'https://search.dip.bundestag.de/api/v1/aktivitaet')
+dip=$(curl -m 60 \
+'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp')
 ```
