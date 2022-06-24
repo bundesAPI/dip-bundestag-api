@@ -6,14 +6,14 @@ Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
 Aktuell wird ein API-Key benötigt, der per Mail an infoline.id3@bundestag.de beantragt werden kann. Alternativ gibt es offenbar temporäre wechselnde öffentliche Keys 
 (siehe https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content).
 
-Folgender API-Key ist im Header der Anfrage zu inkludieren:
+Folgender API-Key (gültig bis Ende Mai 2023) ist im Header der Anfrage zu inkludieren:
 
-**Authorization:** ApiKey N64VhW8.yChkBUIJeosGojQ7CSR2xwLf3Qy7Apw464
+**Authorization:** ApiKey GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp
 
 
 Alternativ oder ergänzend kann der API-Key auch als GET-Parameter apikey inkludiert werden:
 
-**apikey:** N64VhW8.yChkBUIJeosGojQ7CSR2xwLf3Qy7Apw464
+**apikey:** GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp
 
 
 ## Aktivität
@@ -131,6 +131,6 @@ Metadaten zu Vorgang, mit dem Pfad-Parameter *id* (z.B. 908).
 ## Beispiel:
 
 ```bash
-dip=$(curl -m 60 -H "Authorization: ApiKey N64VhW8.yChkBUIJeosGojQ7CSR2xwLf3Qy7Apw464" \
-'https://search.dip.bundestag.de/api/v1/aktivitaet')
+dip=$(curl -m 60 \
+'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp')
 ```
