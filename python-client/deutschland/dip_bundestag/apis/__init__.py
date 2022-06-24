@@ -5,7 +5,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.aktivitaet_api import AktivitaetApi
+#   from deutschland.dip_bundestag.api.aktivitaet_api import AktivitaetApi
 #
 # or import this package, but before doing it, use:
 #
