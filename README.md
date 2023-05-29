@@ -6,14 +6,13 @@ Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
 Aktuell wird ein API-Key benötigt, der per Mail an infoline.id3@bundestag.de beantragt werden kann. Alternativ gibt es offenbar temporäre wechselnde öffentliche Keys 
 (siehe https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content).
 
-Folgender API-Key (gültig bis Ende Mai 2023) ist im Header der Anfrage zu inkludieren:
+Folgender API-Key (gültig bis Ende Mai 2024) ist im Header der Anfrage zu inkludieren:
 
-**Authorization:** ApiKey GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp
-
+**Authorization**: ApiKey rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF
 
 Alternativ oder ergänzend kann der API-Key auch als GET-Parameter apikey inkludiert werden:
 
-**apikey:** GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp
+**apikey**: rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF
 
 
 ## Aktivität
