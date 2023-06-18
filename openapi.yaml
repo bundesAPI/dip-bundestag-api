@@ -818,7 +818,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 84343
+          example: "84343"
         typ:
           type: "string"
           enum:
@@ -925,7 +925,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 173376
+          example: "173376"
         vorgangsposition:
           type: "string"
           example: "Antrag zur Weitergeltung der Geschäftsordnung"
@@ -986,7 +986,7 @@ components:
         vorgang_id:
           type: "string"
           pattern: "^\\d+$"
-          example: 84343
+          example: "84343"
           description: "ID des zugehörigen Vorgangs"
         datum:
           type: "string"
@@ -1080,7 +1080,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 68852
+          example: "68852"
         typ:
           type: "string"
           enum:
@@ -1127,7 +1127,7 @@ components:
               id:
                 type: "string"
                 pattern: "^\\d+$"
-                example: 546
+                example: "546"
                 description: "ID von Personenstammdaten"
               title:
                 type: "string"
@@ -1198,7 +1198,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 908
+          example: "908"
         dokumentart:
           type: "string"
           enum:
@@ -1314,7 +1314,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 1493545
+          example: "1493545"
         aktivitaetsart:
           type: "string"
           example: "Rede"
@@ -1386,7 +1386,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 1728
+          example: "1728"
         nachname:
           type: "string"
           example: "Leyen"
@@ -1526,7 +1526,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 68852
+          example: "68852"
           description: "ID einer Drucksache oder eines Plenarprotokolls"
         dokumentart:
           type: "string"
@@ -1724,13 +1724,13 @@ components:
       properties:
         jahrgang:
           type: "string"
-          example: 2018
+          example: "2018"
         heftnummer:
           type: "string"
-          example: 11
+          example: "11"
         seite:
           type: "string"
-          example: 409
+          example: "409"
         ausfertigungsdatum:
           type: "string"
           format: "date"
@@ -1794,7 +1794,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 84393
+          example: "84393"
           description: "ID eines verknüpften Vorgangs"
         titel:
           type: "string"
@@ -1827,7 +1827,7 @@ components:
         id:
           type: "string"
           pattern: "^\\d+$"
-          example: 282237
+          example: "282237"
           description: "ID eines verknüpften Vorgangs"
         verweisung:
           type: "string"
