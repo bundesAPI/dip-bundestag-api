@@ -11,11 +11,11 @@ sys.path.insert(0, os.path.abspath("../"))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "dip_bundestag-api"
-copyright = "2023, bund.dev"
-author = "bund.dev"
+copyright = "2023, Auskunfts- und Rechercheservice der Parlamentsdokumentation"
+author = "Auskunfts- und Rechercheservice der Parlamentsdokumentation"
 
-version = "0.1.0"
-release = "0.1.0"
+version = "0.1.1"
+release = "0.1.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

@@ -4,50 +4,50 @@ dip\_bundestag.api package
 Submodules
 ----------
 
-dip\_bundestag.api.aktivitaet\_api module
+dip\_bundestag.api.aktivitten\_api module
 -----------------------------------------
 
-.. automodule:: dip_bundestag.api.aktivitaet_api
+.. automodule:: dip_bundestag.api.aktivitten_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-dip\_bundestag.api.drucksache\_api module
------------------------------------------
+dip\_bundestag.api.drucksachen\_api module
+------------------------------------------
 
-.. automodule:: dip_bundestag.api.drucksache_api
+.. automodule:: dip_bundestag.api.drucksachen_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-dip\_bundestag.api.person\_api module
--------------------------------------
+dip\_bundestag.api.personenstammdaten\_api module
+-------------------------------------------------
 
-.. automodule:: dip_bundestag.api.person_api
+.. automodule:: dip_bundestag.api.personenstammdaten_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-dip\_bundestag.api.plenarprotokoll\_api module
-----------------------------------------------
-
-.. automodule:: dip_bundestag.api.plenarprotokoll_api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-dip\_bundestag.api.vorgang\_api module
---------------------------------------
-
-.. automodule:: dip_bundestag.api.vorgang_api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-dip\_bundestag.api.vorgangsposition\_api module
+dip\_bundestag.api.plenarprotokolle\_api module
 -----------------------------------------------
 
-.. automodule:: dip_bundestag.api.vorgangsposition_api
+.. automodule:: dip_bundestag.api.plenarprotokolle_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dip\_bundestag.api.vorgangspositionen\_api module
+-------------------------------------------------
+
+.. automodule:: dip_bundestag.api.vorgangspositionen_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+dip\_bundestag.api.vorgnge\_api module
+--------------------------------------
+
+.. automodule:: dip_bundestag.api.vorgnge_api
    :members:
    :undoc-members:
    :show-inheritance:

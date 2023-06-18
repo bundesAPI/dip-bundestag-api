@@ -1,8 +1,8 @@
 [tool]
 [tool.poetry]
 name = "de-dip-bundestag"
-version = "0.1.0"
-description = "DIP Bundestag API"
+version = "0.1.1"
+description = "Deutscher Bundestag - DIP"
 keywords = ["OpenAPI", "OpenAPI-Generator", "dip-bundestag", "App", "API"]
 homepage = "https://github.com/bundesAPI/dip-bundestag-api"
 authors = ["BundesAPI <kontakt@bund.dev>"]
