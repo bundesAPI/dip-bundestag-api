@@ -24,9 +24,9 @@ jobs:
         with:
           openapi-url: ${{ steps.seturl.outputs.value}}
 
-      - uses: devops-infra/action-pull-request@v0.5.5
+      - uses: peter-evans/create-pull-request@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          target_branch: main
+          draft: true
           title: New version of openapi.yaml
           body: "**Automated pull request** New version of openapi found on https://search.dip.bundestag.de/api/v1/openapi.yaml"
+          base: main
