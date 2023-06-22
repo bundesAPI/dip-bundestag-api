@@ -16,13 +16,19 @@ jobs:
         id: seturl
         run: |
           USER_INPUT=${{ github.event.inputs.openapi-url }}
-          echo "::set-output openapi-url=value::${USER_INPUT:-"https://search.dip.bundestag.de/api/v1/openapi.yaml"}"
+          echo "OPENAPI_URL=${USER_INPUT:-"https://search.dip.bundestag.de/api/v1/openapi.yaml"}"  >> $GITHUB_OUTPUT
 
       - uses: actions/checkout@v3
 
+      - name: print # If action not triggered manually, set Url
+        id: print
+        run: |
+          echo ${{steps.seturl.outputs.OPENAPI_URL}}
+
+
       - uses: maximiliancw/openapi-sync-action@latest
         with:
-          openapi-url: ${{ steps.seturl.outputs.value}}
+          openapi-url: ${{ steps.seturl.outputs.OPENAPI_URL}}
 
       - uses: peter-evans/create-pull-request@v5
         with:
