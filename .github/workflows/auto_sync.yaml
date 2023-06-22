@@ -20,12 +20,6 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name: print # If action not triggered manually, set Url
-        id: print
-        run: |
-          echo ${{steps.seturl.outputs.OPENAPI_URL}}
-
-
       - uses: maximiliancw/openapi-sync-action@latest
         with:
           openapi-url: ${{ steps.seturl.outputs.OPENAPI_URL}}
