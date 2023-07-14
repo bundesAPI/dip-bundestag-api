@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - uses: maximiliancw/dip-bundestag-api-sync-action@latest
+      - uses: maximiliancw/dip-bundestag-api-sync-action@main
         with:
           openapi-url: ${{ steps.seturl.outputs.OPENAPI_URL}}
 
