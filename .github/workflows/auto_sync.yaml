@@ -1,0 +1,31 @@
+on:
+  schedule:
+    - cron: '0 4 * * 0' # At 04:00 on Sunday.
+  workflow_dispatch:
+    inputs:
+      openapi-url:
+        description: "Url for the openapi.yaml to sync."
+        default: "https://search.dip.bundestag.de/api/v1/openapi.yaml"
+        required: true
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    name: OpenAPI Sync
+    steps:
+      - name: Set url step # If action not triggered manually, set Url
+        id: seturl
+        run: |
+          USER_INPUT=${{ github.event.inputs.openapi-url }}
+          echo "OPENAPI_URL=${USER_INPUT:-"https://search.dip.bundestag.de/api/v1/openapi.yaml"}"  >> $GITHUB_OUTPUT
+
+      - uses: actions/checkout@v3
+
+      - uses: maximiliancw/openapi-sync-action@latest
+        with:
+          openapi-url: ${{ steps.seturl.outputs.OPENAPI_URL}}
+
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          draft: true
+          title: New version of openapi.yaml
+          body: "**Automated pull request** New version of openapi found on https://search.dip.bundestag.de/api/v1/openapi.yaml"
