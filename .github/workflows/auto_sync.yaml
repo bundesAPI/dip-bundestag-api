@@ -1,6 +1,6 @@
 on:
-  #schedule:
-  #  - cron: '0 4 * * 0' # At 04:00 on Sunday.
+  schedule:
+    - cron: '0 4 * * 0' # At 04:00 on Sunday.
   workflow_dispatch:
     inputs:
       openapi-url:
