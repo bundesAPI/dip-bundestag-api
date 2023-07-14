@@ -2,20 +2,34 @@
 Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
 
 
-## Authentifizierung
-Aktuell wird ein API-Key benötigt, der per Mail an infoline.id3@bundestag.de beantragt werden kann. Alternativ gibt es offenbar temporäre wechselnde öffentliche Keys 
-(siehe https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content).
+## How-To
 
-Folgender API-Key (gültig bis Ende Mai 2024) ist im Header der Anfrage zu inkludieren:
+### Authentifizierung
+Zur Nutzung der API wird ein API-Schlüssel benötigt:
 
-**Authorization**: ApiKey rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF
+- Ein individueller Schlüssel kann per Mail an infoline.id3@bundestag.de beantragt werden
+- Es steht ein temporärer, öffentlicher Schlüssel zur Verfügung ([Quelle](https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content)). Der aktuelle Schlüssel ist gültig bis Ende 05/2024: `rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
 
-Alternativ oder ergänzend kann der API-Key auch als GET-Parameter apikey inkludiert werden:
+Der API-Schlüssel kann sowohl als HTTP-Header sowie als GET-Parameter eingesetzt werden:
 
-**apikey**: rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF
+- HTTP Header: `Authorization: ApiKey rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
+- GET-Parameter: `?apikey=rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
 
+### Nutzung
 
-## Aktivität
+#### cURL
+```bash
+dip=$(curl -m 60 \
+'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp')
+```
+
+#### Python
+Ein automatisch generierter Python-Client steht via [GitHub](https://github.com/bundesAPI/dip-bundestag-api/tree/main/python-client) und [PyPI](https://pypi.org/project/de-dip-bundestag/) zur Verfügung. Die Nutzungshinweise befinden sich im entsprechenden `README` auf GitHub.
+
+## Endpoints
+Die API stellt eine Dokumentation mit SwaggerUI bereit: 
+
+### Aktivität
 
 **URL:** https://search.dip.bundestag.de/api/v1/aktivitaet
 
@@ -23,7 +37,7 @@ Alternativ oder ergänzend kann der API-Key auch als GET-Parameter apikey inklud
 Liste aller Aktivitäten.
 
 
-## Aktivität-ID
+### Aktivität-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/aktivitaet/{id}
 
@@ -31,7 +45,7 @@ Liste aller Aktivitäten.
 Metadaten zu einer Aktivität, mit dem Pfad-Parameter *id* (z.B. 908).
 
 
-## Drucksache
+### Drucksache
 
 **URL:** https://search.dip.bundestag.de/api/v1/drucksache
 
@@ -39,7 +53,7 @@ Metadaten zu einer Aktivität, mit dem Pfad-Parameter *id* (z.B. 908).
 Liste aller Drucksachen.
 
 
-##  Drucksache-ID
+###  Drucksache-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/drucksache/{id}
 
@@ -47,7 +61,7 @@ Liste aller Drucksachen.
 Metadaten zu einer Drucksache, mit dem Pfad-Parameter *id* (z.B. 908).
 
 
-## Drucksache-Text
+### Drucksache-Text
 
 **URL:** https://search.dip.bundestag.de/api/v1/drucksache-text
 
@@ -55,7 +69,7 @@ Metadaten zu einer Drucksache, mit dem Pfad-Parameter *id* (z.B. 908).
 Liste aller Volltexte der Drucksachen.
 
 
-##  Drucksache-Text-ID
+###  Drucksache-Text-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/drucksache-text/{id}
 
@@ -63,7 +77,7 @@ Liste aller Volltexte der Drucksachen.
 Liste aller Personenstammdaten.
 
 
-##  Person
+###  Person
 
 **URL:** https://search.dip.bundestag.de/api/v1/person
 
@@ -71,7 +85,7 @@ Liste aller Personenstammdaten.
 Liste aller Personenstammdaten.
 
 
-##  Person-ID
+###  Person-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/person/{id}
 
@@ -79,7 +93,7 @@ Liste aller Personenstammdaten.
 Personenstammdaten, mit dem Pfad-Parameter *id* (z.B. 908).
 
 
-##  Plenarprotokoll
+###  Plenarprotokoll
 
 **URL:** https://search.dip.bundestag.de/api/v1/plenarprotokoll
 
@@ -87,7 +101,7 @@ Personenstammdaten, mit dem Pfad-Parameter *id* (z.B. 908).
 Liste aller Plenarprotokolle.
 
 
-##  Plenarprotokoll-ID
+###  Plenarprotokoll-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/plenarprotokoll/{id}
 
@@ -95,7 +109,7 @@ Liste aller Plenarprotokolle.
 Metadaten zu Plenarprotokoll, mit dem Pfad-Parameter *id* (z.B. 908).
 
 
-##  Plenarprotokoll-Text
+###  Plenarprotokoll-Text
 
 **URL:** https://search.dip.bundestag.de/api/v1/plenarprotokoll-text
 
@@ -103,7 +117,7 @@ Metadaten zu Plenarprotokoll, mit dem Pfad-Parameter *id* (z.B. 908).
 Liste aller Volltexte der Plenarprotokolle.
 
 
-##  Plenarprotokoll-Text-ID
+###  Plenarprotokoll-Text-ID
 
 **URL:** https://search.dip.bundestag.de/api/v1/plenarprotokoll-text/{id}
 
@@ -111,7 +125,7 @@ Liste aller Volltexte der Plenarprotokolle.
 Volltexte des Plenarprotokolls, mit dem Pfad-Parameter *id* (z.B. 908).
 
 
-##  Vorgang
+###  Vorgang
 
 **URL:** https://search.dip.bundestag.de/api/v1/vorgang
 
@@ -119,17 +133,10 @@ Volltexte des Plenarprotokolls, mit dem Pfad-Parameter *id* (z.B. 908).
 Liste aller Vorgänge.
 
 
-##  Vorgang
+###  Vorgang
 
 **URL:** https://search.dip.bundestag.de/api/v1/vorgang/{id}
 
 
 Metadaten zu Vorgang, mit dem Pfad-Parameter *id* (z.B. 908).
 
-
-## Beispiel:
-
-```bash
-dip=$(curl -m 60 \
-'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp')
-```
