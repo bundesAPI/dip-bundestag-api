@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath("../"))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "dip_bundestag-api"
-copyright = "2023, Auskunfts- und Rechercheservice der Parlamentsdokumentation"
+copyright = "2025, Auskunfts- und Rechercheservice der Parlamentsdokumentation"
 author = "Auskunfts- und Rechercheservice der Parlamentsdokumentation"
 
 version = "0.1.1"
