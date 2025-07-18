@@ -8,19 +8,19 @@ Bundestag: Dokumentations- und Informationssystem für Parlamentsmaterialien
 Zur Nutzung der API wird ein API-Schlüssel benötigt:
 
 - Ein individueller Schlüssel kann per Mail an infoline.id3@bundestag.de beantragt werden
-- Es steht ein temporärer, öffentlicher Schlüssel zur Verfügung ([Quelle](https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content)). Der aktuelle Schlüssel ist gültig bis Ende 05/2024: `rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
+- Es steht ein temporärer, öffentlicher Schlüssel zur Verfügung ([Quelle](https://dip.bundestag.de/%C3%BCber-dip/hilfe/api#content)). Der aktuelle Schlüssel ist gültig bis Ende 05/2026: `OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw`
 
 Der API-Schlüssel kann sowohl als HTTP-Header sowie als GET-Parameter eingesetzt werden:
 
-- HTTP Header: `Authorization: ApiKey rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
-- GET-Parameter: `?apikey=rgsaY4U.oZRQKUHdJhF9qguHMkwCGIoLaqEcaHjYLF`
+- HTTP Header: `Authorization: ApiKey OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw`
+- GET-Parameter: `?apikey=OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw`
 
 ### Nutzung
 
 #### cURL
 ```bash
 dip=$(curl -m 60 \
-'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=GmEPb1B.bfqJLIhcGAsH9fTJevTglhFpCoZyAAAdhp')
+'https://search.dip.bundestag.de/api/v1/aktivitaet?apikey=OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw')
 ```
 
 #### Python
